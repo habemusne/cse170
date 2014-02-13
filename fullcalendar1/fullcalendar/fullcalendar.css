@@ -17,7 +17,7 @@
 	
 html .fc,
 .fc table {
-	font-size: 0.9em;
+	font-size: 1em;
 	}
 	
 .fc td,
@@ -55,7 +55,6 @@ html .fc,
 	}
 	
 .fc-header-title h2 {
-	font-size: 14px;
 	margin-top: 0;
 	white-space: nowrap;
 	}
@@ -139,11 +138,10 @@ html .fc,
 .fc-button {
 	position: relative;
 	display: inline-block;
-	padding: 0 .8em;
+	padding: 0.6em;
 	overflow: hidden;
-	height: 1.6em;
-	line-height: 1.6em;
-	width: 2.2em;
+	height: 2.8em;
+	line-height: 2.8em;
 	white-space: nowrap;
 	cursor: pointer;
 	}
@@ -169,7 +167,7 @@ html .fc,
 
 .fc-text-arrow {
 	margin: 0 .1em;
-	font-size: 1.6em;
+	font-size: 2em;
 	font-family: "Courier New", Courier, monospace;
 	vertical-align: baseline; /* for IE7 */
 	}
