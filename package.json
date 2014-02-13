@@ -2,7 +2,7 @@
   "name": "Well",
   "version": "0.0.0",
   "description": "This example app is so cool that I peed on my pants",
-  "main": "web.js",
+  "main": "app.js",
   "directories": {
     "example": "examples"
   },
