@@ -1,0 +1,30 @@
+{
+  "name": "Well",
+  "version": "0.0.0",
+  "description": "This example app is so cool that I peed on my pants",
+  "main": "web.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mAsCuLiNe/cse170.git"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "Nan Chen",
+  "license": "UCSD",
+  "bugs": {
+    "url": "https://github.com/mAsCuLiNe/cse170/issues"
+  },
+  "homepage": "https://github.com/mAsCuLiNe/cse170",
+  "dependencies": {
+    "logfmt": "~0.20.0",
+    "express": "~3.4.8"
+  }
+}
