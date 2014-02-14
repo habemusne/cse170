@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Thu Feb 13 2014 06:08:27 GMT+0000 (UTC) -->
+<!-- Last Published: Fri Feb 14 2014 08:55:46 GMT+0000 (UTC) -->
 <html data-wf-site="52fc1f49ac1481c20f0000e4">
 <head>
   <meta charset="utf-8">
@@ -115,13 +115,13 @@
   </div>
   <div class="w-container">
     <div class="w-form">
-      <form name="email-form" data-name="Email Form">
+      <form name="email-form" data-name="Email Form" method="get">
         <label for="name">Location:</label>
-        <input class="w-input text1" type="text" placeholder="Enter the location" name="location" data-name="Location" required="required"></input>
+        <input class="w-input text1" type="text" placeholder="Enter the location" name="location" data-name="Location"></input>
         <label class="form1" for="email">Date:</label>
         <div class="w-row">
           <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-            <select class="w-select day" name="dropdown" required="required">
+            <select class="w-select day" name="dropdown">
               <option value="">1</option>
               <option value="">2</option>
               <option value="Second">3</option>
@@ -156,7 +156,7 @@
             </select>
           </div>
           <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-            <select class="w-select month" name="dropdown" required="required">
+            <select class="w-select month" name="dropdown">
               <option value="">1</option>
               <option value="">2</option>
               <option value="Second">3</option>
@@ -172,7 +172,7 @@
             </select>
           </div>
           <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
-            <select class="w-select year" name="dropdown" required="required">
+            <select class="w-select year" name="dropdown">
               <option value="">2010</option>
               <option value="">2011</option>
               <option value="">2012</option>
@@ -182,8 +182,7 @@
           </div>
         </div>
         <label>Tags:</label>
-        <input class="w-input" type="text" placeholder="#YourMood, e.x: #happy" name="mood" required="required" data-name="mood"></input>
-        <input class="w-button submit1" type="submit" value="Submit" data-wait="Please wait..."></input>
+        <input class="w-input" type="text" placeholder="#YourMood, e.x: #happy" name="mood" data-name="mood"></input>
       </form>
       <div class="w-form-done">
         <p>Thank you! Your submission has been received!</p>
