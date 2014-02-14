@@ -1,157 +1,35 @@
 <!DOCTYPE html>
-<html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Fri Feb 14 2014 19:49:23 GMT+0000 (UTC) -->
+<html data-wf-site="52fc1f49ac1481c20f0000e4">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>HTML5????</title>
-<style type="text/css">
-li{list-style:none}
-li img{width:100px}
-.tips{color:red}
-</style>
+  <meta charset="utf-8">
+  <title>A6EZ - help</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/a6ez.webflow.css">
+  <script>
+    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  </script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-<p>???????????????</p>
-<input type="file" id="filesInput" multiple />
-<br><br>
-<a href="javascript:;" id="btnUpload">????</a>
-<p id="info"></p>
-<label>?????</label><progress id="Progress" value="0" max="100"></progress>
-<span id="percent"></span>
-<p id="uploadSpeed"></p>
-<ul id="imageBox"></ul>
-<script type="text/javascript">
-//?????????
-function $(objectId) {
-  if(document.getElementById && document.getElementById(objectId)) {
-// W3C DOM
-return document.getElementById(objectId);
-  } else if (document.all && document.all(objectId)) {
-// MSIE 4 DOM
-return document.all(objectId);
-  } else if (document.layers && document.layers[objectId]) {
-// NN 4 DOM.. note: this won't find nested layers
-return document.layers[objectId];
-  } else {
-return false;
-  }
-var filesInput = $("filesInput"),
-    info = $("info"),
-    imageBox = $("imageBox"),
-    btnUpload = $("btnUpload"),
-    progress = $("Progress"),
-    percent = $("percent"),
-    uploadSpeed = $("uploadSpeed");
-//???????????
-var uploadImgArr = [];
-//??????????????????????????
-var isUpload = false;
-//???????????
-function getFiles(e) {
-    isUpload = false;
-    e = e || window.event;
-    //??file input????????
-    var files = e.target.files,
-    //????????????
-    reg = /image\/.*/i;
-    //console.log(files);
-    for (var i = 0,f; f = files[i]; i++) {
-        //???if??????????????
-        if (!reg.test(f.type)) {
-            imageBox.innerHTML += "<li>????" + f.name + "??????</li>";
-            //????
-            continue;
-        }
-        //console.log(f);
-        uploadImgArr.push(f);
-        var reader = new FileReader();
-        //?????JS??tab????????????http://www.css119.com/archives/1418
-        reader.onload = (function(file) {
-            //?????????
-            var fileSize = (file.size / 1024).toFixed(2) + "K",
-            fileName = file.name,
-            fileType = file.type;
-            //console.log(fileName)
-            return function(e) {
-                //console.log(e.target)
-                //???????
-                var img = new Image();
-                img.addEventListener("load", imgLoaded, false);
-                img.src = e.target.result;
-                function imgLoaded() {
-                    imgWidth = img.width;
-                    imgHeight = img.height;
-                    //???????????imgWidth?imgHeight
-                    imageBox.innerHTML += "<li><img src='" + e.target.result + "' alt='" + fileName + "' title='" + fileName + "'> ??????" + fileName + ";????????" + fileSize + ";???????" + fileType + ";???????" + imgWidth + " X " + imgHeight + "</li>";
-                }
-            }
-        })(f);
-        //??????
-        reader.readAsDataURL(f);
-    }
-    //console.log(uploadImgArr);
-}
-if (window.File && window.FileList && window.FileReader && window.Blob) {
-    filesInput.addEventListener("change", getFiles, false);
-} else {
-    info.innerHTML = "????????HTML5??";
-    info.className="tips";
-}
-//??????
-function uploadFun() {
-    var j = 0;
-    function fun() {
-        if (uploadImgArr.length > 0 && !isUpload) {
-            var singleImg = uploadImgArr[j];
-            var xhr = new XMLHttpRequest();
-            if (xhr.upload) {
-                //???(?http://www.css119.com/archives/1476)
-                xhr.upload.addEventListener("progress",
-                function(e) {
-                    if (e.lengthComputable) {
-                        progress.value = (e.loaded / e.total) * 100;
-                        percent.innerHTML = Math.round(e.loaded * 100 / e.total) + "%";
-                        //????
-                        var nowDate = new Date().getTime();
-                        var x = (e.loaded) / 1024;
-                        var y = (nowDate - startDate) / 1000;
-                        uploadSpeed.innerHTML = "???" +(x / y).toFixed(2) + " K\/S";
-                    } else {
-                        percent.innerHTML = "????????";
-                    }
-                },
-                false);
-                // ??????????
-                xhr.onreadystatechange = function(e) {
-                    if (xhr.readyState == 4) {
-                        if (xhr.status == 200 && eval("(" + xhr.responseText + ")").status == true) {
-                            info.innerHTML += singleImg.name + "????; ";
-                            //??progress???????????????????progress???100%?????????????100%
-                            progress.value = 100;
-                            percent.innerHTML = "100%";
-                            isUpload = true;
-                        } else {
-                            info.innerHTML += singleImg.name + "????; ";
-                        }
-                        //??????????????????fun???????
-                        if (j < uploadImgArr.length - 1) {
-                            j++;
-                            isUpload = false;
-                            fun();
-                        }
-                    }
-                };
-                var formdata = new FormData();
-                formdata.append("FileData", singleImg);
-                // ????
-                xhr.open("POST", "upload.php", true);
-                xhr.send(formdata);
-                var startDate = new Date().getTime();
-            }
-        }
-    }
-    fun();
-}
-btnUpload.addEventListener("click", uploadFun, false);
-</script>
+  <div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container nav1">
+      <a class="w-nav-brand brand" href="index.html"></a>
+      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="index.html">Home</a><a class="w-nav-link" href="help.html">Help</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img src="images/IMG_8208.jpeg" width="320" alt="52fe73045b5cb3144e000815_IMG_8208.jpeg">
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
 </body>
 </html>
