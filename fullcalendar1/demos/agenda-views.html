@@ -2,6 +2,23 @@
 <html>
 <head>
 
+
+  <div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container nav1">
+      <a class="w-nav-brand brand" href="index.html"></a>
+      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="../../index.html">Home</a><a class="w-nav-link" href="#">Help</a><a class="w-nav-link" href="../../Map.html">Mapping Your Life</a><a class="w-nav-link" href="agenda-views.html">Calender</a><a class="w-nav-link" href="#">TimeLine</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="../../js/webflow.js"></script>
+
+
+
+
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
   <link rel="stylesheet" type="text/css" href="css/a6ez.webflow.css">
@@ -29,10 +46,10 @@
 		$('#calendar').fullCalendar({
 
 			buttonText: {
-				today:    'Today',
-				month:    'Month',
-				week:     'Week',
-				day:      'Day'
+				today:    'T',
+				month:    'M',
+				week:     'W',
+				day:      'D'
 			},
 			header: {
 				left: 'prev,next today',
@@ -43,7 +60,7 @@
 			editable: false,
 			handleWindowResize: true,
 
-			aspectRatio: 1.35,
+			aspectRatio: 0.8,
        
     
 			events: [
@@ -98,12 +115,12 @@
 	body {
 		margin-top: 40px;
 		text-align: center;
-		font-size: 10px;
+		font-size: 12px;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		}
 
 	#calendar {
-		width: 500px;
+		width: 250px;
 		margin: 0 auto;
 		}
 		
@@ -115,16 +132,8 @@
 <body>
 <body bgcolor="#9fbdc2">
 
-<div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
-    <div class="w-container nav1">
-      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="index.html">Home</a><a class="w-nav-link" href="help.html">Help</a><a class="w-nav-link" href="map.html">Mapping Your Life</a><a class="w-nav-link" href="fullcalendar1/demos/agenda-views.html">Calender</a><a class="w-nav-link" href="timeline.html">TimeLine</a><a class="w-nav-link"
-        href="login.html">Log In</a><a class="w-nav-link" href="sign-up.html">Sign Up</a>
-      </nav>
-      <div class="w-nav-button">
-        <div class="w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div>
+
+
 
 <div id='calendar'></div>
 
