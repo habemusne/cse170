@@ -25,6 +25,9 @@
   "homepage": "https://github.com/mAsCuLiNe/cse170",
   "dependencies": {
     "logfmt": "~0.20.0",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "express3-handlebars": "*",
+    "mongodb": "*",
+    "mongoose": "*"
   }
 }
