@@ -23,7 +23,8 @@ exports.checkLogin = function(req, res){
     }
     else{
       console.log('user: correct pw');
-      res.send('/html/main.html');
+      //res.send('/html/main.html');
+      res.send('http://lab777.herokuapp.com');
       //res.redirect('/html/main.html');
     }
 
