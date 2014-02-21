@@ -9,6 +9,11 @@
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="/css/a6ez.webflow.css">
+
+<!-- ADDED Feb 19 -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/introHCI.css" rel="stylesheet">
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
@@ -30,17 +35,17 @@
     </div>
   </div>
   <div class="w-form">
-    <form name="email-form" data-name="Email Form">
-      <label for="name">User Name:</label>
-      <input class="w-input" type="text" placeholder="Enter your username" name="name" data-name="Name"></input>
-      <label for="email">Email Address:</label>
-      <input class="w-input" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required"></input>
-      <label>Password</label>
-      <input class="w-input" type="password" placeholder="Enter your password" name="field" required="required"></input>
-      <label>Re-type your password:</label>
-      <input class="w-input" type="password" placeholder="Re-enter your passowrd" name="field" required="required"></input>
-      <input class="w-button sumbit2" type="submit" value="Submit" data-wait="Please wait..."></input>
+    <form id="signin-form" role="form" name="email-form">
+      <label for="newName"></label>
+      <input type="text" class="form-control" id="newName" placeholder="Enter new user name..."></input>
+      <label for="newEmail"></label>
+      <input type="text" class="form-control" id="newEmail" placeholder="Enter your email..."></input>
+      <label for="newPW"></label>
+      <input type="text" class="form-control" id="newPW" placeholder="Enter new password..."></input>
+      <label for="retypePW"></label>
+      <input type="text" class="form-control" id="retypePW" placeholder="Re-enter your password..."></input>
     </form>
+
     <div class="w-form-done">
       <p>Thank you! Your submission has been received!</p>
     </div>
@@ -48,7 +53,17 @@
       <p>Oops! Something went wrong while submitting the form :(</p>
     </div>
   </div>
+
+   <div class="w-row">
+    <button id="signinCancelButton" type="button" class="btn btn-default">Cancel</button>
+    <!--<div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="button" href="/html/main.html">Submit</a>-->
+    <button id="signinSubmitButton" type="button" class="btn btn-default">Submit</button>
+  </div>
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/webflow.js"></script>
+  <script src="/js/introHCI.js"></script>
 </body>
 </html>

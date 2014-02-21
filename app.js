@@ -68,13 +68,8 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser());
-app.use(express.session({
-  store: new MongoStore({
-    url: 'mongodb://root:myPassword@mongo.onmodulus.net:27017/3xam9l3'
-  }),
-  secret: '1234567890QWERTY'
-}));
+app.use(express.cookieParser('Intro HCI secret key'));
+app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -87,23 +82,9 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 //app.get('/project/:id', project.projectInfo);
 
-app.get('/awesome', function(req, res) {
-  res.send("You're Awesome.");
-});
-
-app.get('/radical', function(req, res) {
-  res.send('What a radical visit!');
-});
-
-app.get('/tubular', function(req, res) {
-  res.send('Are you a surfer?');
-});
-
-
-
-app.get('/users', user.addUser);
+//app.get('/users', user.addUser);
 app.post('/users/checkPW', user.checkLogin);
-
+app.post('/users/new', user.addUser);
 // Example route
 // app.get('/users', user.list);
 

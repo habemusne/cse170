@@ -1,14 +1,17 @@
 [
 	{
-		"Name": "Xiangcheng Zhu",
+		"Name": "zhuxiangcheng",
+		"Email": "",
 		"password": "zhuzhuzhu"
 	},
 	{
-		"Name": "Xiaomeng Wang",
+		"Name": "wangxiaomeng",
+		"Email": "",
 		"password": "mengmengmeng"
 	},
 	{
-		"Name": "Nan Chen",
+		"Name": "chennan",
+		"Email": "",
 		"password": "nannannan"
 	}
 ]

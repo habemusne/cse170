@@ -9,6 +9,13 @@
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="/css/a6ez.webflow.css">
+
+<!-- ADDED Feb 19 -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/introHCI.css" rel="stylesheet">
+<!-- ADDED Feb 19 -->
+
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
@@ -29,6 +36,9 @@
     </div>
   </div>
   <div class="w-form">
+
+    <!-- BEFORE FEB 19 -->
+    <!--
     <form name="email-form" data-name="Email Form" data-redirect="http://a6ez.webflow.com">
       <div class="w-container">
         <h1>A Photo A Day</h1>
@@ -38,6 +48,19 @@
       <label for="email">Password:</label>
       <input class="w-input" type="password" placeholder="Enter your pasword" name="password" data-name="Password"></input>
     </form>
+    -->
+    <!-- BEFORE FEB 19 -->
+
+    <form id="authorization-form" role="form" name="email-form">
+      <div class="w-container">
+        <h1>A Photo A Day</h1>
+      </div>
+      <label for="usrName">User Name:</label>
+      <input type="text" class="form-control" id="usrName" placeholder="Enter username..."></input>
+      <label for="usrPassword">Password:</label>
+      <input type="text" class="form-control" id="usrPassword" placeholder="Enter password..."></input>
+    </form>
+
     <div class="w-form-done">
       <p>Thank you! Your submission has been received!</p>
     </div>
@@ -46,12 +69,17 @@
     </div>
   </div>
   <div class="w-row">
-    <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="button" href="/html/forget.html">Forget?</a>
-    </div>
-    <div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="button" href="/html/main.html">Submit</a>
-    </div>
+    <button id="authorizationSubmitButton" type="button" class="btn btn-default">Submit</button>
+    <button id="forgetButton" type="button" class="btn btn-default">Forget?</button>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="/js/webflow.js"></script>
+
+<!-- ADDED Feb 19 -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/introHCI.js"></script>
+<!-- ADDED Feb 19 -->
+
 </body>
 </html>

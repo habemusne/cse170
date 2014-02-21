@@ -9,7 +9,6 @@ exports.view = function(req, res){
 
 	models.User
 		.find()
-		//.sort('date')
 		.exec(renderUsers);
 
 	function renderUsers(err, users) {
