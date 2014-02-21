@@ -25,7 +25,7 @@ mongoose.connect(database_uri);
 // Do the initialization here
 
 // Step 1: load the JSON data
-var users_json = require('./users.json');
+var user_json = require('./users.json');
 
 // Step 2: Remove all existing documents
 models.User
@@ -39,9 +39,9 @@ function onceClear(err) {
 
   // loop over the projects, construct and save an object from each one
   // Note that we don't care what order these saves are happening in...
-  var to_save_count = users_json.length;
-  for(var i=0; i<users_json.length; i++) {
-    var json = users_json[i];
+  var to_save_count = user_json.length;
+  for(var i=0; i<user_json.length; i++) {
+    var json = user_json[i];
     var usr = new models.User(json);
 
     usr.save(function(err, usr) {
@@ -58,4 +58,3 @@ function onceClear(err) {
     });
   }
 }
-

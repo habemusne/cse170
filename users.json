@@ -1,14 +1,14 @@
 [
 	{
 		"Name": "Xiangcheng Zhu",
-		"Password": "zhuzhuzhu"
+		"password": "zhuzhuzhu"
 	},
 	{
 		"Name": "Xiaomeng Wang",
-		"Password": "mengmengmeng"
+		"password": "mengmengmeng"
 	},
 	{
 		"Name": "Nan Chen",
-		"Password": "nannannan"
+		"password": "nannannan"
 	}
 ]

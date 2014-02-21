@@ -7,14 +7,14 @@ var models = require('../models');
 
 exports.view = function(req, res){
 
-	models.Project
+	models.User
 		.find()
-		.sort('date')
-		.exec(renderProjects);
+		//.sort('date')
+		.exec(renderUsers);
 
-	function renderProjects(err, projects) {
-		res.render('index', { 'projects': projects });
-		//console.log(projects);
+	function renderUsers(err, users) {
+		res.render('index', { 'users': users });
+		//console.log(users);
 	}
 
 };
