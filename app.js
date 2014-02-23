@@ -85,6 +85,7 @@ app.get('/', index.view);
 //app.get('/users', user.addUser);
 app.post('/users/checkPW', user.checkLogin);
 app.post('/users/new', user.addUser);
+
 // Example route
 // app.get('/users', user.list);
 

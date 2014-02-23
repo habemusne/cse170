@@ -36,8 +36,12 @@ function initializePage() {
 			'retypedPassword': retypedPassword
 		};
 
-		$.post('/users/new', json, function(){
-			window.location.href = '/html/main.html';
+		$.post('/users/new', json, function(data){
+			window.location.href = data;
 		});
+	});
+
+	$('#forgetButton').click(function(e) {
+		window.location.href = '/html/forget.html';
 	});
 }
