@@ -4,18 +4,11 @@
 <html data-wf-site="52fc1f49ac1481c20f0000e4">
 <head>
   <meta charset="utf-8">
-  <title>A6EZ - LogIn</title>
+  <title>A6EZ - map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="/css/a6ez.webflow.css">
-
-<!-- ADDED Feb 19 -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="/css/introHCI.css" rel="stylesheet">
-<!-- ADDED Feb 19 -->
-
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
@@ -27,45 +20,28 @@
     <div class="w-container nav1">
       <a class="w-nav-brand brand" href="/html/index.html"></a>
       <nav class="w-nav-menu" role="/html/navigation">
+        <a class="w-nav-link" href="/html/main.html">Home</a>
         <a class="w-nav-link" href="/html/help.html">Help</a>
-        <a class="w-nav-link" id="signupButton">Sign Up</a>
+        <a class="w-nav-link" href="/html/take.html">Take a Photo</a>
+        <a class="w-nav-link" href="/html/photos.html">Photo Gallery</a>
+        <a class="w-nav-link" href="/html/index.html">Sign Out</a>
       </nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
     </div>
   </div>
-
- <div class="w-form">
-   <form id="authorization-form" role="form" name="email-form">
-      <div class="w-container">
-        <h1>A Photo A Day</h1>
-      </div>
-      <label for="usrName">User Name:</label>
-      <input type="text" class="form-control" id="usrName" placeholder="Enter username..."></input>
-      <label for="usrPassword">Password:</label>
-      <input type="text" class="form-control" id="usrPassword" placeholder="Enter password..."></input>
-    </form>
-
-    <div class="w-form-done">
-      <p>Thank you! Your submission has been received!</p>
-    </div>
-    <div class="w-form-fail">
-      <p>Oops! Something went wrong while submitting the form :(</p>
-    </div>
-  </div>
   <div class="w-row">
-    <button id="authorizationSubmitButton" type="button" class="btn btn-default">Submit</button>
-    <button id="forgetButton" type="button" class="btn btn-default">Forget</button>
+    <div class="w-col w-col-4">
+      <h2>Map Your Life</h2>
+    </div>
+    <div class="w-col w-col-4"></div>
+    <div class="w-col w-col-4"></div>
+  </div>
+  <div class="secation1">
+    <div class="w-widget w-widget-map map1" data-widget-latlng="32.880398,-117.242188" data-widget-style="roadmap" data-widget-zoom="14" data-widget-tooltip="01/01/2013"></div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="/js/webflow.js"></script>
-
-<!-- ADDED Feb 19 -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/index.js"></script>
-<!-- ADDED Feb 19 -->
-
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Feb 14 2014 08:55:45 GMT+0000 (UTC) -->
+<!-- Last Published: Fri Feb 14 2014 08:55:46 GMT+0000 (UTC) -->
 <html data-wf-site="52fc1f49ac1481c20f0000e4">
 <head>
   <meta charset="utf-8">
-  <title>A6EZ - LogIn</title>
+  <title>A6EZ - sign up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/webflow.css">
@@ -14,8 +14,6 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="/css/introHCI.css" rel="stylesheet">
-<!-- ADDED Feb 19 -->
-
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
@@ -27,24 +25,25 @@
     <div class="w-container nav1">
       <a class="w-nav-brand brand" href="/html/index.html"></a>
       <nav class="w-nav-menu" role="/html/navigation">
+        <a class="w-nav-link" href="/html/index.html">Cancel</a>
+        <a class="w-nav-link" href="/html/main.html">Home</a>
         <a class="w-nav-link" href="/html/help.html">Help</a>
-        <a class="w-nav-link" id="signupButton">Sign Up</a>
       </nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
     </div>
   </div>
-
- <div class="w-form">
-   <form id="authorization-form" role="form" name="email-form">
-      <div class="w-container">
-        <h1>A Photo A Day</h1>
-      </div>
-      <label for="usrName">User Name:</label>
-      <input type="text" class="form-control" id="usrName" placeholder="Enter username..."></input>
-      <label for="usrPassword">Password:</label>
-      <input type="text" class="form-control" id="usrPassword" placeholder="Enter password..."></input>
+  <div class="w-form">
+    <form id="signup-form" role="form" name="email-form">
+      <label for="newName"></label>
+      <input type="text" class="form-control" id="newName" placeholder="Enter new user name..."></input>
+      <label for="newEmail"></label>
+      <input type="text" class="form-control" id="newEmail" placeholder="Enter your email..."></input>
+      <label for="newPW"></label>
+      <input type="text" class="form-control" id="newPW" placeholder="Enter new password..."></input>
+      <label for="retypePW"></label>
+      <input type="text" class="form-control" id="retypePW" placeholder="Re-enter your password..."></input>
     </form>
 
     <div class="w-form-done">
@@ -54,18 +53,17 @@
       <p>Oops! Something went wrong while submitting the form :(</p>
     </div>
   </div>
-  <div class="w-row">
-    <button id="authorizationSubmitButton" type="button" class="btn btn-default">Submit</button>
-    <button id="forgetButton" type="button" class="btn btn-default">Forget</button>
-  </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/webflow.js"></script>
 
-<!-- ADDED Feb 19 -->
+   <div class="w-row">
+    <button id="signupCancelButton" type="button" class="btn btn-default">Cancel</button>
+    <!--<div class="w-col w-col-6 w-col-small-6 w-col-tiny-6"><a class="button" href="/html/main.html">Submit</a>-->
+    <button id="signupSubmitButton" type="button" class="btn btn-default">Submit</button>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/webflow.js"></script>
   <script src="/js/index.js"></script>
-<!-- ADDED Feb 19 -->
-
 </body>
 </html>
