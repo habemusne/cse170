@@ -31,7 +31,7 @@
 	<div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
     	<div class="w-container nav1">
       	<a class="w-nav-brand brand" href="index.html"></a>
-      	<nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="home.html">Home</a><a class="w-nav-link" href="index.html">SignOut</a>
+      	<nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="/main">Home</a><a class="w-nav-link" href="/">SignOut</a>
       	</nav>
       	<div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
@@ -45,16 +45,16 @@
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 	<hr />
 
-	<form id="new-project-form" role="form">
+	<form id="newPhotoForm" role="form">
     <div class="form-group">
-      <label for="title">Name your photo</label>
-      <input type="text" class="form-control" id="title" placeholder="Project Name">
+      <label for="photoName">Name your photo</label>
+      <input type="text" class="form-control" id="photoName" placeholder="Automatically named by today's date if not entered">
     </div>
     <div class="form-group">
-      <label for="image_url">Project image URL</label>
-      <input type="text" class="form-control" id="image_url" placeholder="http://www.example.com/really_cool_image.jpg">
+      <label for="photoURL">Photo URL</label>
+      <input type="text" class="form-control" id="photoURL" placeholder="http://www.example.com/really_cool_image.jpg">
 
-
+<!--
       <div id="upload-area">
         <div id="preview">
           <img width="100px" height="100px" src="http://cdn.css-tricks.com/images/icons/128px/zurb.png" id="thumb">
@@ -68,23 +68,20 @@
       </div>
 
     </div>
+-->
 
     <div class="form-group">
-      <label for="date">Date</label>
-      <input type="text" class="form-control" id="date" placeholder="January 1">
-    </div>
-    <div class="form-group">
       <label for="summary">Tags</label>
-      <textarea type="text" class="form-control" id="summary" rows="3" placeholder="#Happy#love"></textarea>
+      <textarea type="text" class="form-control" id="photoTags" rows="3" placeholder="#Happy #love"></textarea>
     </div>
-    <button id="newProjectSubmitButton" type="button" class="btn btn-default">Submit</button>
+    <button id="newPhotoSubmitButton" type="button" class="btn btn-default">Submit</button>
   </form>
 
 	</div>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/introHCI.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

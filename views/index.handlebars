@@ -22,12 +22,12 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 </head>
-<body>
+<body bgcolor = "#ECF6CE">
   <div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
     <div class="w-container nav1">
       <a class="w-nav-brand brand" href="/html/index.html"></a>
       <nav class="w-nav-menu" role="/html/navigation">
-        <a class="w-nav-link" href="/html/help.html">Help</a>
+        <a class="w-nav-link" id="helpButton">Help</a>
         <a class="w-nav-link" id="signupButton">Sign Up</a>
       </nav>
       <div class="w-nav-button">
@@ -38,13 +38,15 @@
 
  <div class="w-form">
    <form id="authorization-form" role="form" name="email-form">
+
       <div class="w-container">
-        <h1>A Photo A Day</h1>
+        <h1 align="center">A Photo A Day</h1>
       </div>
+
       <label for="usrName">User Name:</label>
       <input type="text" class="form-control" id="usrName" placeholder="Enter username..."></input>
       <label for="usrPassword">Password:</label>
-      <input type="text" class="form-control" id="usrPassword" placeholder="Enter password..."></input>
+      <input type="password" class="form-control" id="usrPassword" placeholder="Enter password..."></input>
     </form>
 
     <div class="w-form-done">
@@ -55,8 +57,9 @@
     </div>
   </div>
   <div class="w-row">
-    <button id="authorizationSubmitButton" type="button" class="btn btn-default">Submit</button>
-    <button id="forgetButton" type="button" class="btn btn-default">Forget</button>
+    <button id="authorizationSubmitButton" type="button" class="button" tyle="float: left;">Submit</button>
+    <button id="signupButton" type="button" class="button" style="float: middle;">Sign Up</button>
+    <button id="forgetButton" type="button" class="button" style="float: right;">Forget</button>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="/js/webflow.js"></script>

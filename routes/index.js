@@ -17,7 +17,7 @@ exports.mainView = function(req, res){
     	.exec(renderPhotos);
 
     function renderPhotos(err, photos) {
-
+        if (err){console.log(err); res.send(500);}
     	console.log(photos);
     	res.render('main', {'photos': photos});
     }
@@ -25,8 +25,14 @@ exports.mainView = function(req, res){
 
 exports.signupView = function(req, res){
     res.render('signup');
-}
+};
 
 exports.forgetView = function (req, res){
 	res.render('forget');
-}
+};
+exports.helpView = function (req, res){
+    res.render('help');
+};
+exports.setView = function (req, res){
+    res.render('set');
+};

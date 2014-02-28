@@ -13,21 +13,17 @@
     <link rel="stylesheet" type="text/css" href="/css/a6ez.webflow.css">
     <script>
       if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
-    </script>
-      
+    </script>      
 </head>
 
 <body>
   <div class="container">
-    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-    <!-- p means paragraph -->
+
   <div class="w-nav" data-collapse="all" data-animation="default" data-duration="400" data-contain="1">
       <div class="w-container nav1">
         <a class="w-nav-brand brand" href="index.html"></a>
         <nav class="w-nav-menu" role="navigation">
-          <a class="w-nav-link" href="#">Home</a>
-          <a class="w-nav-link" id="addPhotoButton">Upload</a>
-          <a class="w-nav-link" id="setButton">Setting</a>
+          <a class="w-nav-link" href="/main">Home</a>
           <a class="w-nav-link" href="/">Sign Out</a>
           <a class="w-nav-link" id="helpButton">Help</a>
 
@@ -37,34 +33,22 @@
       </div>
     </div>
   </div>
-
-    <h4>Photo Scripts</h4>
-
-    {{#each photos}}
-    <div class="photos" id="photos{{id}}">
-      <div class="thumbnail">
-        <a href="#">
-          <img src="{{image}}" alt="Lorem Pixel image" class="img project-img">
-          <p>{{date}}</p>
-        </a>
-        <div class="details"></div>
-      </div>
-    </div>
-    {{/each}}
-
-
-    <form action="#">
-        <input type="submit" value="Top">
-    </form>
-    <form action="/addphoto">
-        <input type="submit" value="Upload">
-    </form>
-
-  <hr />
-
-
-
-  </div>
+  
+    <script type="text/javascript" src="http://js.addthisevent.com/atemay.js"></script>
+   <a href="http://example.com/link-to-your-event" title="Add to Calendar" class="addthisevent">
+    Add a Remaider
+    <span class="_start">10-05-2012 11:38:46</span>
+    <span class="_end">11-05-2012 11:38:46</span>
+    <span class="_zonecode">6</span>
+    <span class="_summary">Summary of the event</span>
+    <span class="_description">Description of the event</span>
+    <span class="_location">Location of the event</span>
+    <span class="_organizer">Organizer</span>
+    <span class="_organizer_email">Organizer e-mail</span>
+    <span class="_facebook_event">http://www.facebook.com/events/160427380695693</span>
+    <span class="_all_day_event">true</span>
+    <span class="_date_format">DD/MM/YYYY</span>
+  </a>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="/js/webflow.js"></script>
 

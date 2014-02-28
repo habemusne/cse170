@@ -55,29 +55,26 @@ p {
 }
 @media (max-width: 767px) {
 }
+@-webkit-keyframes greenPulse {
+  from { background-color: #549DB0; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #6282ED; -webkit-box-shadow: 0 0 18px #1A3509; }
+  to { background-color: #2EE4E7; -webkit-box-shadow: 0 0 9px #333; }
+}
 @media (max-width: 479px) {
   body {
-    background-color: #9fbdc2;
+    background-color: #ECF6CE;
   }
   .button {
-    display: block;
-    margin: 12px auto 17px;
-    padding-bottom: 14px;
-    float: none;
-    clear: none;
-    background-color: #82818f;
-    color: white;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: capitalize;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   }
   .nav1 {
     position: static;
     display: block;
     overflow-x: scroll;
     overflow-y: scroll;
-    background-color: #5f6967;
+    background-color: #1CB29C;
   }
   .con1 {
     right: 0px;

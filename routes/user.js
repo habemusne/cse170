@@ -13,6 +13,7 @@ exports.authorization = function(req, res){
     .exec(checkPW);
 
   function checkPW(err, users){
+    if (err){console.log(err); res.send(500);}
     /*console.log(users);
     console.log(form_data.password);
     */
@@ -35,26 +36,6 @@ exports.authorization = function(req, res){
 }
 
 exports.addUser = function(req, res) {
-  /*
-    console.log('mainView: ' + req.session.userID);
-    var filename = req.session.userID + '_list';
-    var emptyData = "";
-    fs.readFile('./user_photos/' + filename, "binary", function(err, data){
-      if (err){
-        console.log('Your photo list does not exist. Creating... ')
-        fs.writeFile('./user_photos/' + filename, emptyData, function(err){
-          if(err)
-            console.log(err);
-          else
-            console.log('new file: ./user_photos/' + filename + ' is saved');
-        });
-      }
-      else{
-        console.log('Your photo list is found. The Data is ');
-        console.log(data);
-      }
-  });
-*/
 
   var form_data = req.body;
   console.log(form_data);
@@ -95,4 +76,34 @@ exports.addUser = function(req, res) {
 
 exports.addPhoto = function (req, res) {
   res.render('add');
+}
+
+exports.addPhotoSubmit = function (req, res) {
+  var form_body = req.body;
+  
+  var date = new Date();
+  console.log('date: ' + date);
+
+  var photoTitle;
+  if (req.body.title == null)
+    photoTitle = date;
+  else
+    photoTitle = form_body.title;
+
+  var newData = {
+    'userID': req.session.userID,
+    'title': form_body.title,
+    'date': new Date(),
+    'summary': form_body.summary,
+    'image': form_body.image
+  };
+
+  var newPhoto = new models.Photo(newData);
+  newPhoto.save(afterSaving);
+
+  function afterSaving(err){
+    if (err){console.log(err); res.send(500);}
+    console.log('Your photo is saved');
+    res.send('/main');
+  }
 }
