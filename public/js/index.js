@@ -29,6 +29,12 @@ function initializePage() {
 		var newPassword = $('#signup-form #newPW').val();
 		var retypedPassword = $('#signup-form #retypePW').val();
 
+ 		if (newPassword !== retypedPassword){
+    		alert('Your retyped password does not match');
+    		return;
+  		}
+
+
 		var form_entered = {
 			'Name': $('#signup-form #newName').val(),
 			'Email': $('#signup-form #newEmail').val(),
@@ -72,5 +78,19 @@ function initializePage() {
 		$.post('/addphoto/addsubmit', form_entered, function(data){
 			window.location.href = data;
 		});
+	});
+
+	$('#signoutButton').click(function(e) {
+		req.session.loggedin = false;
+      	req.session.userID = null;
+	});
+
+	$('#homeButton').click(function(e) {
+		if (req.session.loggedin == false){
+			window.location.href = '/index';
+		}
+		else{
+			window.location.href = '/main';
+		}
 	});
 }

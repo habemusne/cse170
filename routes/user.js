@@ -26,12 +26,12 @@ exports.authorization = function(req, res){
     else{
       console.log('user: correct pw');
       req.session.userID = users[0].userID;
+      req.session.loggedin = true;
       console.log('session saved');
       res.send('/main');
       //res.send('http://lab777.herokuapp.com');
       //res.redirect('/html/main.html');
     }
-
   }
 }
 
@@ -39,12 +39,6 @@ exports.addUser = function(req, res) {
 
   var form_data = req.body;
   console.log(form_data);
-/*
-  if (form_data.newPassword != form_data.retypedPassword){
-    res.send('Password not consistent');
-    return;
-  }
-*/
 
   //
   //Chen Nan shuo: 
@@ -70,7 +64,7 @@ exports.addUser = function(req, res) {
 
   function afterSaving(err){
     if (err){console.log(err); res.send(500);}
-    res.send('/');
+    res.send('/main');
   }
 }
 
